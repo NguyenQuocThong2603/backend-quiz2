@@ -60,12 +60,13 @@ function findLastWeekPeriodWithoutMomentJs(input, timezone) {
 
     // check if the date input is Monday or not, if not calculate the number of gap days between input date and Monday
     let dayInWeek = utcDayInLastWeek.getUTCDay() || 7;
-    if(dayInWeek!==MONDAY) {
+    if(dayInWeek !== MONDAY) {
         dayInWeek = dayInWeek - MONDAY;
     }
     else {
         dayInWeek = 0;
     }
+    
     // get the first date of last week in UTC +0 version
     const startDateLastWeekTimeStamp = new Date(Date.UTC(year,month,date)).getTime() - (dayInWeek * NUMBER_OF_MILISECONDS_IN_DAY) - NUMBER_OF_MILISECONDS_IN_WEEK - utcOffset;
     const startDateLastWeek = new Date(startDateLastWeekTimeStamp);
@@ -77,4 +78,4 @@ function findLastWeekPeriodWithoutMomentJs(input, timezone) {
     return { startDateLastWeek, endDateLastWeek };
 }
 
-console.log(findLastWeekPeriodWithoutMomentJs(new Date('2022-10-24'),'Asia/Ho_Chi_Minh'));
+console.log(findLastWeekPeriodWithoutMomentJs(new Date('2022-10-25'),'America/New_York'));

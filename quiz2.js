@@ -49,6 +49,6 @@ function findLastWeekPeriod(input, timezone) {
     return { startDateLastWeek, lastDateLastWeek };
 }
 
-console.log(findLastWeekPeriod(new Date('2022-10-24'),'Asia/Ho_Chi_Minh'));
+console.log(findLastWeekPeriod(new Date('2022-10-25'),'America/New_York'));
 
 
